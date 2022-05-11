@@ -27,6 +27,7 @@
 html, body {
     height: 100%; /* 높이를 100% 전체화면으로 채우기 */
     font-family: 'GmarketSansMedium';
+    min-width: 400px; /* 해상도 변경시 최소 넓이 지정 */
 }
 
 body {
