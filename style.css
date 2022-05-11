@@ -1,0 +1,129 @@
+@charset "utf-8"; /* 문자 인코딩 방식 지정 */
+
+/*
+    디스플레이 크기에 따른 background-color 변경
+    - 0~767px이면 : #bbd0ff;
+    - 768px~1024px이면 : #c8b6ff;
+    - 1024px~ 이면 : #ffd6ff;
+*/
+
+/* 웹폰트 지정 */
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/* 초기화 */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; /* 요소의 너비와 높이를 균일하게 유지해줌*/
+}
+
+html, body {
+    height: 100%; /* 높이를 100% 전체화면으로 채우기 */
+    font-family: 'GmarketSansMedium';
+}
+
+body {
+    padding: 10px;
+}
+
+.title {
+    display: flex;
+    flex-direction: row; /* 요소의 정렬 방향: 가로 */
+    flex-wrap: nowrap; /* 기본값, 줄바꿈을 하지 않음 */
+    justify-content: center; /* 자식 요소 가운데 정렬 */
+    align-items: center; /* 자식 요소 가운데 방향으로 정렬 */
+    color: #848484;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 700;
+    height: 60px;
+    border: 5px solid #a0c4ff;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+    height: calc(100% - 80px); /* 전체 height에서 80px 제외 */
+}
+
+aside {
+    display: flex;
+    flex-direction: column; /* 요소의 정렬 방향:세로 */
+    flex-wrap: nowrap;
+    flex-shrink: 0; /* 요소의 안쪽 여백 축소 */
+    width: 120px;
+    border: 5px solid #bdb2ff;
+    padding : 10px;
+}
+
+aside > span {
+    font-size: 1.4rem;
+    color: #7a70b9;
+    padding-bottom: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1; /* 전체 너빗값의 비율을 1로 지정 */
+    align-content: flex-start; /* 자식 요소를 시작 방향으로 정렬(여러개) */
+    padding: 10px;
+    margin-left: 10px;
+    border: 5px solid #e7b2ff;
+    overflow-y: scroll; /* Y축 overflow 제어 = 스크롤 */
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 180px;
+    min-height: 180px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.item > img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* img 오브젝트 사이즈를 컨테이너 크기에 맞춤 */
+    margin-bottom: 10px;
+}
+
+.item > span {
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+
+/* 미디어쿼리 선언 */
+@media screen and (max-width: 767px) {
+    .item { 
+        background-color: #ede9ff;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .item { 
+        background-color: #fde2e4;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .item { 
+        background-color: #fff1ba;
+    
+    }
+}
